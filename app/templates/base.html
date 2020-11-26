@@ -1,0 +1,43 @@
+<html>
+    <head>
+      {% if title %}
+      <title>Event Manager - {{ title }}</title>
+      {% else %}
+      <title>Welcome to Event Manager</title>
+      {% endif %}
+      <style>
+        table, td, th {
+          border: 1px solid black;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+      </style>
+    </head>
+    <body>
+        <div>
+		<a href="{{ url_for('index') }}">Event list</a>
+		{% if current_user.is_anonymous %}
+		|
+		<a href="{{ url_for('login') }}">Login</a>
+		<a href="{{ url_for('register') }}">Register</a>
+		{% else %}
+		<a href="{{ url_for('addevent') }}">Add Event</a> |
+		<a href="{{ url_for('logout') }}">Logout</a> ({{ current_user.username }})
+		{% endif %}
+	</div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

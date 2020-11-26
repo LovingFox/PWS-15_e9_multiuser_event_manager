@@ -1,0 +1,5 @@
+__pycache__/
+migrations/
+commands.txt
+*.swp
+*.db

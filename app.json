@@ -1,0 +1,7 @@
+{
+  "name": "Flask Event Manager App",
+  "description": "SkillFactory HomeWork E9",
+  "image": "heroku/python",
+  "keywords": ["python", "flask", "sqlalchemy"]
+}
+
