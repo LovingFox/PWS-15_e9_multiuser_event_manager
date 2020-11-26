@@ -43,10 +43,8 @@ $ export DATABASE_URL=postgresql://postgres:password@postgres:5432/database
 ```
 Если DATABASE_URL не задана, то по-умолчанию используется SQLite (sqlite:///temp.db)
 
-  - создать таблицы в базе данных и выполнить миграции
+  - создать таблицы в базе данных
 ```
-$ flask db init
-$ flask db migrate -m "first migration"
 $ flask db upgrade
 ```
 
